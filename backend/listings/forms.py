@@ -10,15 +10,15 @@ class ListingForm(forms.ModelForm):
         data = super().clean()
         latitude = data.pop('latitude')
         longitude = data.pop('longitude')
-        data['location'] = Point(longitude, latitude, srid=4326)
+        data['location'] = Point(latitude, longitude, srid=4326)
         return data
     
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         location = self.initial.get('location')
         if isinstance(location, Point):
-            self.initial['latitude'] = location.tuple[1]
-            self.initial['longitude'] = location.tuple[0]
+            self.initial['latitude'] = location.tuple[0]
+            self.initial['longitude'] = location.tuple[1]
 
 
     class Meta:
