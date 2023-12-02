@@ -44,7 +44,7 @@ class Listing(models.Model):
     date_posted = models.DateTimeField(default=timezone.now)
 
     #geo
-    location = models.PointField(blank=True, null=True, SRID=4326)
+    location = models.PointField(blank=True, null=True, srid=4326)
 
 
 
