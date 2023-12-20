@@ -24,7 +24,8 @@ class ListingForm(forms.ModelForm):
     class Meta:
         model = Listing
         fields = ("title", "description", "area", "borough", "listing_type", "property_status", "rental_frequency", "price", 
-                  "rooms", "furnished", "pool", "elevator", "cctv", "parking", "date_posted", "location", "latitude", "longitude",)
+                  "rooms", "furnished", "pool", "elevator", "cctv", "parking", "date_posted", "location", "latitude", "longitude",
+                  'picture1', 'picture2', 'picture3', 'picture4', 'picture5',)
 
     
 
