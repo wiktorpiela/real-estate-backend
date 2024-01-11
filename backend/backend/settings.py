@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'accounts',
     'django.contrib.gis',
     'rest_framework',
+    'rest_framework.authtoken',
     'rest_framework_gis',
     "corsheaders",
+    'djoser',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +140,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+}
