@@ -45,7 +45,6 @@ class Listing(models.Model):
     parking = models.BooleanField(default=False)
     date_posted = models.DateTimeField(default=timezone.now)
 
-    #geo
     #location = models.PointField(blank=True, null=True, srid=4326)
 
     latitude = models.FloatField(blank=True, null=True)
