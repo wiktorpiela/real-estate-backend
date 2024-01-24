@@ -7,6 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth-djoser/', include('djoser.urls')),
     path('api-auth-djoser/', include('djoser.urls.authtoken')),
+    path('accounts/', include("accounts.urls")),
     path('', include("listings.urls")),
 ]
 

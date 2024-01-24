@@ -1,3 +1,12 @@
-from django.shortcuts import render
+from accounts.models import Profile
+from .serializers import ProfileSerializer
+from rest_framework import generics
 
-# Create your views here.
+class ProfileList(generics.ListAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+
+class ProfileDetails(generics.RetrieveAPIView):
+    queryset = Profile.objects.all()
+    serializer_class = ProfileSerializer
+    lookup_field = 'seller'
